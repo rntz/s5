@@ -78,3 +78,7 @@ data _⊢_is_ (X : Cx) : Type -> Mode -> Set where
 
 foo : ∀{A} -> ∅ ⊢ A :⊃ □ (◇ A) is true
 foo = ⊃I (□I (necc (◇I (select (wipe-true (inj₁ eq)) (poss (hyp true tt choose-true))))))
+
+bar : ∀{A} -> ∅ ⊢ ◇ A :⊃ □ (◇ A) is true
+bar = ⊃I (◇E (hyp true tt (inj₁ eq))
+              (□I (necc (◇I (select (wipe-poss (inj₁ eq)) (poss (hyp true tt choose-true)))))))
